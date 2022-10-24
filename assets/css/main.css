@@ -34,9 +34,6 @@ body {
 }
 
 ol, ul {
-	columns: 2;
-	-webkit-columns: 2;
-	-moz-columns: 2;
 	list-style: none;
 	margin: 5px 0;
 }
