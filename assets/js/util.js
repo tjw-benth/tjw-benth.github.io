@@ -279,7 +279,19 @@
 
 					config.target.toggleClass(config.visibleClass);
 
+					document.addEventListener("DOMContentLoaded", function () {
+						const expandLinks = document.querySelectorAll(".special");
+						const expandImages = document.querySelectorAll(".expand-image");
+						
+						expandLinks.forEach((link, index) => {
+							link.addEventListener("click", function () {
+								expandImages[index].classList.toggle("expanded");
+							});
+						});
+					});
+
 				});
+				
 
 		// Window.
 
