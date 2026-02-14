@@ -1,9 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>TJW.Github.io</title>
+	<title>Research Projects — Tom Williams</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Research projects by Tom Williams covering Arctic marine ecology, offshore wind impacts, carbon cycling, and climate change effects on polar benthic ecosystems." />
+	<meta name="author" content="Tom Williams" />
+	<link rel="icon" href="favicon.png" type="image/png">
+	<!-- Open Graph / Social sharing -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Research Projects — Tom Williams">
+	<meta property="og:description" content="Research projects by Tom Williams covering Arctic marine ecology, offshore wind impacts, carbon cycling, and climate change effects on polar benthic ecosystems.">
+	<meta property="og:url" content="https://tjw-benth.github.io/projects.html">
+	<meta property="og:image" content="https://tjw-benth.github.io/images/TJW_Arctic_clothing.JPG">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@tjw_97">
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
@@ -14,12 +25,12 @@
 		<header id="header" class="alt">
 			<h1><a href="index.html">TJW</a></h1>
 			<nav>
-				<a href="#menu">Menu</a>
+				<a href="#menu" aria-label="Open navigation menu">Menu</a>
 			</nav>
 		</header>
 
-		<!-- Menu -->
-		<nav id="menu">
+		<!-- Navigation Menu -->
+		<nav id="menu" role="navigation" aria-label="Main navigation">
 			<div class="inner">
 				<h2>Menu</h2>
 				<ul class="links">
@@ -28,9 +39,9 @@
 					<li><a href="projects.html">Projects</a></li>
 					<li><a href="datascience.html">Data Science</a></li>
 					<li><a href="#footer">Contact</a></li>
-					<li><a href="#">CV</a></li>
+					<li><a href="williams_CV.pdf" aria-label="Download CV">CV</a></li>
 				</ul>
-				<a href="#" class="close">Close</a>
+				<button type="button" class="close" aria-label="Close menu">Close</button>
 			</div>
 		</nav>
 
@@ -40,7 +51,7 @@
 				<div class="inner">
 					<span class="fas fa-dragon" style="font-size:24px;"></span>
 					<h2>Projects</h2>
-					<p>All research projects I have been directly involved in.</p>
+					<p>All research projects I have been directly involved in. For data science and quantitative tools used in these projects, see the <a href="datascience.html">Data Science page</a>. Associated outputs are listed on the <a href="publications.html">Publications page</a>.</p>
 				</div>
 			</header>
 
@@ -49,159 +60,173 @@
 				<div class="inner">
 					<section class="features">
 						<article>
-							<a href="https://sea-quester.eu/" target="_blank" class="image content">
-								<img src="images/sea_quester.jpg" alt="SEA-Quester polar marine research" width="200px" height="250px" style="object-fit: cover;" />
+							<a href="https://sea-quester.eu/" target="_blank" rel="noopener noreferrer" class="image content">
+								<img src="images/sea_quester.jpg" alt="SEA-Quester polar marine research" width="200" height="250" style="object-fit: cover;" />
 							</a>
 							<h3 class="major">SEA-Quester</h3>
+							<p><em>Current (2025–present) · EU Grant #101136480</em></p>
 							<p><strong>SEA-Quester</strong> investigates marine carbon cycling in novel ecosystems in the polar seas that are emerging due to climate change. Melting sea ice, changing currents, and a warmer ocean are already changing species distribution, behaviour, and metabolism. The project addresses how these changes will impact marine biodiversity and ecosystem functions and services, like carbon sequestration, in the polar seas. Understanding these impacts is crucial for meeting biodiversity and climate change mitigation targets.</p>
-							<a href="https://sea-quester.eu/" target="_blank" class="special">Learn more</a>
+							<a href="https://sea-quester.eu/" target="_blank" rel="noopener noreferrer" class="special">Learn more</a>
 						</article>
 
 						<article>
-							<a href="https://ecowind.uk/projects/bowie/" target="_blank" class="image content">
-								<img src="images/OW_v_benthos.jpg" alt="Offshore wind and benthic interactions" width = 200px; height = 250px; object-fit: cover; />
+							<a href="https://ecowind.uk/projects/bowie/" target="_blank" rel="noopener noreferrer" class="image content">
+								<img src="images/OW_v_benthos.jpg" alt="Offshore wind and benthic interactions" width="200" height="250" style="object-fit: cover;" />
 							</a>
 							<h3 class="major">Benthic-Offshore Wind Interactions Evaluation (BOWIE)</h3>
+							<p><em>Completed (2024–2025) · NERC Grant #NE/X008991/1</em></p>
 							<p>The <strong>ECOWind</strong> BOWIE project addresses the impact of offshore wind expansion on marine ecosystems and biodiversity, aiming to support sustainable decision-making. Using environmental research and stakeholder engagement, it fills knowledge gaps and aids in implementing robust approaches to offshore wind development. Autonomous underwater vehicles survey seabed habitats, while engagement with stakeholders helps understand decision-making uncertainties. BOWIE facilitates alignment between offshore wind expansion and marine spatial planning pressures, promoting biodiversity and environmental recovery.</p>
-							<a href="https://ecowind.uk/projects/bowie/" target="_blank" class="special">Learn more</a>
+							<a href="https://ecowind.uk/projects/bowie/" target="_blank" rel="noopener noreferrer" class="special">Learn more</a>
 						</article>
 
 						<article>
-							<a href="https://gotw.nerc.ac.uk/list_full.asp?pcode=NE%2FT001577%2F1" target="_blank" class="image content">
-								<img src="images/Experiment_image.JPG" alt="Marine ecosystem experiment" width = 200px; height = 250px; object-fit: cover; />
+							<a href="https://gotw.nerc.ac.uk/list_full.asp?pcode=NE%2FT001577%2F1" target="_blank" rel="noopener noreferrer" class="image content">
+								<img src="images/Experiment_image.JPG" alt="Marine ecosystem experiment" width="200" height="250" style="object-fit: cover;" />
 							</a>
 							<h3 class="major">Implications of intraspecific trait variability across different environmental conditions for projections of marine ecosystem future</h3>
-							<p>This project focuses on the impact of species diversity and biological traits on ecosystem responses to environmental changes. It aims to quantify traits affecting species' vulnerability and assess how trait variation influences ecosystem functioning.</p>
-							<a href="https://gotw.nerc.ac.uk/list_full.asp?pcode=NE%2FT001577%2F1" target="_blank" class="special">Learn more</a>
+							<p><em>Completed (2024) · NERC Grant #NE/T001577/1</em></p>
+							<p>This project focuses on the impact of species diversity and biological traits on ecosystem responses to environmental changes. It aims to quantify traits affecting species' vulnerability and assess how trait variation influences ecosystem functioning. See related <a href="publications.html">publications</a> (Williams et al. 2024, <em>Scientific Reports</em>; Williams et al. 2024, <em>Ecology and Evolution</em>).</p>
+							<a href="https://gotw.nerc.ac.uk/list_full.asp?pcode=NE%2FT001577%2F1" target="_blank" rel="noopener noreferrer" class="special">Learn more</a>
 						</article>
 
 						<article>
-							<a href="https://www.southampton.ac.uk/iroe/projects/geospatial-impact-mapping.page" target="_blank" class="image content">
-								<img src="images/merged_OW_benthos_photo.jpg" alt="Geospatial mapping of offshore wind impacts" width = 200px; height = 250px; object-fit: cover; />
+							<a href="https://www.southampton.ac.uk/iroe/projects/geospatial-impact-mapping.page" target="_blank" rel="noopener noreferrer" class="image content">
+								<img src="images/merged_OW_benthos_photo.jpg" alt="Geospatial mapping of offshore wind impacts" width="200" height="250" style="object-fit: cover;" />
 							</a>
 							<h3 class="major">Geospatial mapping of impacts from offshore wind turbines on benthic community and heritage assets</h3>
-							<p>This project assesses the impact of offshore renewable energy (ORE) expansion on heritage sites and marine ecology to meet UK's net zero goals.</p>
-							<a href="https://www.southampton.ac.uk/iroe/projects/geospatial-impact-mapping.page" target="_blank" class="special">Learn more</a>
+							<p><em>Completed (2023)</em></p>
+							<p>This project assesses the impact of offshore renewable energy (ORE) expansion on heritage sites and marine ecology to meet UK's net zero goals. See related <a href="publications.html">publication</a> (Putuhena, Williams et al. 2025, <em>Scientific Data</em>).</p>
+							<a href="https://www.southampton.ac.uk/iroe/projects/geospatial-impact-mapping.page" target="_blank" rel="noopener noreferrer" class="special">Learn more</a>
 						</article>
 
 						<article>
-							<a href="https://www.arctic.ac.uk/news/united-kingdom-greenland-arctic-research-bursaries-scheme/" target="_blank" class="image content">
-								<img src="images/Greenland_glacier.JPG" alt="Greenland glacier" width = 200px; height = 250px; object-fit: cover; />
+							<a href="https://www.arctic.ac.uk/news/united-kingdom-greenland-arctic-research-bursaries-scheme/" target="_blank" rel="noopener noreferrer" class="image content">
+								<img src="images/Greenland_glacier.JPG" alt="Greenland glacier" width="200" height="250" style="object-fit: cover;" />
 							</a>
 							<h3 class="major">Building and enabling UK-Greenland research capacity to address effects of anthropogenic stressors on benthic ecosystems</h3>
+							<p><em>Completed (2023)</em></p>
 							<p>This project aims to assess the impacts of warming and metal contamination on Arctic ecosystems, particularly in the Greenland region, where understanding remains limited. Through experiments and community engagement, the project will equip researchers to anticipate ecological shifts and contribute to effective decision-making for local systems.</p>
-							<a href="https://www.arctic.ac.uk/news/united-kingdom-greenland-arctic-research-bursaries-scheme/" target="_blank" class="special">Learn more</a>
+							<a href="https://www.arctic.ac.uk/news/united-kingdom-greenland-arctic-research-bursaries-scheme/" target="_blank" rel="noopener noreferrer" class="special">Learn more</a>
 						</article>
 
 						<article>
-							<a href="https://www.southampton.ac.uk/research/groups/marine-biology-ecology" target="_blank" class="image content">
-								<img src="images/amd_benthic_sampling.jpg" alt="Arctic marine benthic sampling" width = 200px; height = 250px; object-fit: cover; />
+							<a href="https://www.southampton.ac.uk/research/groups/marine-biology-ecology" target="_blank" rel="noopener noreferrer" class="image content">
+								<img src="images/amd_benthic_sampling.jpg" alt="Arctic marine benthic sampling" width="200" height="250" style="object-fit: cover;" />
 							</a>
 							<h3 class="major">Ecological consequences of climatic forcing in the Arctic marine benthos</h3>
+							<p><em>Completed — PhD thesis (2019–2023)</em></p>
 							<p>The combined efforts of this PhD thesis explores the magnitude, direction and context of biological responses to past, present and future climate change – and their concomitant effects on benthic ecosystem functioning in one of the world's most rapidly changing environments.</p>
-							<a href="https://www.southampton.ac.uk/research/groups/marine-biology-ecology" target="_blank" class="special">Learn more</a>
+							<a href="https://www.southampton.ac.uk/research/groups/marine-biology-ecology" target="_blank" rel="noopener noreferrer" class="special">Learn more</a>
 						</article>
 
 						<article>
-							<a href="https://euromarinenetwork.eu/activities/predicting-anthropogenic-impacts-on-ecosystem-functioning-using-a-response-effect-trait/" target="_blank" class="image content">
-								<img src="images/Brittany_beach.jpg" alt="Brittany beach research site" width = 200px; height = 250px; object-fit: cover; />
+							<a href="https://euromarinenetwork.eu/activities/predicting-anthropogenic-impacts-on-ecosystem-functioning-using-a-response-effect-trait/" target="_blank" rel="noopener noreferrer" class="image content">
+								<img src="images/Brittany_beach.jpg" alt="Brittany beach research site" width="200" height="250" style="object-fit: cover;" />
 							</a>
 							<h3 class="major">Predicting Anthropogenic Impacts on Ecosystem Functioning using a Response-Effect Trait Framework</h3>
+							<p><em>Completed (2022)</em></p>
 							<p>A scientific consortium seeking to address the status of the functional trait approach in marine benthic ecology.</p>
-							<a href="https://euromarinenetwork.eu/activities/predicting-anthropogenic-impacts-on-ecosystem-functioning-using-a-response-effect-trait/" target="_blank" class="special">Learn more</a>
+							<a href="https://euromarinenetwork.eu/activities/predicting-anthropogenic-impacts-on-ecosystem-functioning-using-a-response-effect-trait/" target="_blank" rel="noopener noreferrer" class="special">Learn more</a>
 						</article>
 
 						<article>
-							<a href="https://twitter.com/polar_research?s=21&t=eiWYj7vHgBfuL_LkbFr2MQ" target="_blank" class="image content">
-								<img src="images/Arctic_fjord.jpg" alt="Arctic fjord" width = 200px; height = 250px; object-fit: cover; />
+							<a href="https://twitter.com/polar_research?s=21&t=eiWYj7vHgBfuL_LkbFr2MQ" target="_blank" rel="noopener noreferrer" class="image content">
+								<img src="images/Arctic_fjord.jpg" alt="Arctic fjord" width="200" height="250" style="object-fit: cover;" />
 							</a>
 							<h3 class="major">Communication of Climate Change impacts in the Arctic</h3>
+							<p><em>Completed (2021–2022)</em></p>
 							<p>An early career researcher consortium seeking to educate young audiences on local, regional and global threats of Arctic climate change via social media posts.</p>
-							<a href="https://twitter.com/polar_research/status/1588512755161923585?s=46&t=eiWYj7vHgBfuL_LkbFr2MQ" target="_blank" class="special">Flora and Fauna</a>
-							<a href="https://twitter.com/polar_research/status/1586448261082128384?s=46&t=eiWYj7vHgBfuL_LkbFr2MQ" target="_blank" class="special">The Ocean</a>
-							<a href="https://twitter.com/polar_research/status/1580965591787393024?s=46&t=eiWYj7vHgBfuL_LkbFr2MQ" target="_blank" class="special">Sea Ice</a>
-							<a href="https://twitter.com/polar_research/status/1578467250218012674?s=46&t=eiWYj7vHgBfuL_LkbFr2MQ" target="_blank" class="special">Glaciers</a>
+							<a href="https://twitter.com/polar_research/status/1588512755161923585?s=46&t=eiWYj7vHgBfuL_LkbFr2MQ" target="_blank" rel="noopener noreferrer" class="special">Flora and Fauna</a>
+							<a href="https://twitter.com/polar_research/status/1586448261082128384?s=46&t=eiWYj7vHgBfuL_LkbFr2MQ" target="_blank" rel="noopener noreferrer" class="special">The Ocean</a>
+							<a href="https://twitter.com/polar_research/status/1580965591787393024?s=46&t=eiWYj7vHgBfuL_LkbFr2MQ" target="_blank" rel="noopener noreferrer" class="special">Sea Ice</a>
+							<a href="https://twitter.com/polar_research/status/1578467250218012674?s=46&t=eiWYj7vHgBfuL_LkbFr2MQ" target="_blank" rel="noopener noreferrer" class="special">Glaciers</a>
 						</article>
 
 						<article>
-							<a href="https://www.southampton.ac.uk/publicpolicy/support-for-policymakers/policy-projects/uk-russia-arctic-project-martin-solan.page" target="_blank" class="image content">
-								<img src="images/background_ice_ship.jpg" alt="Arctic research ship in ice" width = 200px; height = 250px; object-fit: cover; />
+							<a href="https://www.southampton.ac.uk/publicpolicy/support-for-policymakers/policy-projects/uk-russia-arctic-project-martin-solan.page" target="_blank" rel="noopener noreferrer" class="image content">
+								<img src="images/background_ice_ship.jpg" alt="Arctic research ship in ice" width="200" height="250" style="object-fit: cover;" />
 							</a>
 							<h3 class="major">Building and enabling UK-Russian research capacity to address climate change effects on Arctic marine ecosystems</h3>
+							<p><em>Completed (2020–2021)</em></p>
 							<p>The Arctic region is undergoing some of the most rapid rates of change in the world in response to climatic forcing, with dramatic transformations underway in the flora and fauna of coastal Arctic habitats that will affect many ecosystem properties and the delivery of ecosystem services.</p>
-							<a href="https://www.southampton.ac.uk/publicpolicy/support-for-policymakers/policy-projects/uk-russia-arctic-project-martin-solan.page" target="_blank" class="special">Learn more</a>
+							<a href="https://www.southampton.ac.uk/publicpolicy/support-for-policymakers/policy-projects/uk-russia-arctic-project-martin-solan.page" target="_blank" rel="noopener noreferrer" class="special">Learn more</a>
 						</article>
 
 						<article>
-							<a href="https://amundsenscience.com/wp-content/uploads/2022/03/2021-Amundsen-Expedition-Report-2022-03-16-compressed.pdf" target="_blank" class="image content">
-								<img src="images/photo_Amundsen_2021.jpg" alt="Amundsen expedition 2021" width = 200px; height = 250px; object-fit: cover; />
+							<a href="https://amundsenscience.com/wp-content/uploads/2022/03/2021-Amundsen-Expedition-Report-2022-03-16-compressed.pdf" target="_blank" rel="noopener noreferrer" class="image content">
+								<img src="images/photo_Amundsen_2021.jpg" alt="Amundsen expedition 2021" width="200" height="250" style="object-fit: cover;" />
 							</a>
 							<h3 class="major">Amundsen 2021 Expedition</h3>
-							<p>Leg 2 of the expedition encompassed the use of the ROV to explore coral seep habitats and involved significant contributions to the esteemed ArcticNet project. The journey spanned from St. John's to Iqaluit, constituting a profound and noteworthy scientific endeavor.</p>
-							<a href="https://amundsenscience.com/wp-content/uploads/2022/03/2021-Amundsen-Expedition-Report-2022-03-16-compressed.pdf" target="_blank" class="special">Learn more</a>
+							<p><em>Completed (2021)</em></p>
+							<p>Leg 2 of the expedition encompassed the use of the ROV to explore coral seep habitats and involved significant contributions to the esteemed ArcticNet project. The journey spanned from St. John's to Iqaluit, constituting a profound and noteworthy scientific endeavor. See related <a href="publications.html">publications</a> (Williams et al. 2024, <em>Scientific Data</em>; Williams et al. 2024, <em>Chemical Geology</em>).</p>
+							<a href="https://amundsenscience.com/wp-content/uploads/2022/03/2021-Amundsen-Expedition-Report-2022-03-16-compressed.pdf" target="_blank" rel="noopener noreferrer" class="special">Learn more</a>
 						</article>
 
 						<article>
-							<a href="https://projects.noc.ac.uk/bluecoast/" target="_blank" class="image content">
-								<img src="images/flume_experiment.jpg" alt="Flume experiment setup" width = 200px; height = 250px; object-fit: cover; />
+							<a href="https://projects.noc.ac.uk/bluecoast/" target="_blank" rel="noopener noreferrer" class="image content">
+								<img src="images/flume_experiment.jpg" alt="Flume experiment setup" width="200" height="250" style="object-fit: cover;" />
 							</a>
 							<h3 class="major">BLUEcoast</h3>
+							<p><em>Completed (2019)</em></p>
 							<p>Experimental simulation of consecutive storms on coastal sediment integrity and biogeochemical cycling.</p>
-							<a href="https://projects.noc.ac.uk/bluecoast/" target="_blank" class="special">Learn more</a>
+							<a href="https://projects.noc.ac.uk/bluecoast/" target="_blank" rel="noopener noreferrer" class="special">Learn more</a>
 						</article>
 
 						<article>
-							<a href="https://www.bodc.ac.uk/resources/inventories/cruise_inventory/report/17334/" target="_blank" class="image content">
-								<img src="images/photo_JCR_2019.jpg" alt="James Clark Ross research vessel 2019" width = 200px; height = 250px; object-fit: cover; />
+							<a href="https://www.bodc.ac.uk/resources/inventories/cruise_inventory/report/17334/" target="_blank" rel="noopener noreferrer" class="image content">
+								<img src="images/photo_JCR_2019.jpg" alt="James Clark Ross research vessel 2019" width="200" height="250" style="object-fit: cover;" />
 							</a>
 							<h3 class="major">Changing Arctic Ocean Seafloor Cruise JR18006</h3>
-							<p>A multidisciplinary team of like-minded polar benthic scientists collecting physical, chemical and biological samples across a gradient of sea-ice.</p>
-							<a href="https://www.bodc.ac.uk/resources/inventories/cruise_inventory/report/17334/" target="_blank" class="special">Learn more</a>
+							<p><em>Completed (2019)</em></p>
+							<p>A multidisciplinary team of like-minded polar benthic scientists collecting physical, chemical and biological samples across a gradient of sea-ice. See related <a href="publications.html">dataset</a> (Williams et al. 2023, NERC EDS UK Polar Data Centre).</p>
+							<a href="https://www.bodc.ac.uk/resources/inventories/cruise_inventory/report/17334/" target="_blank" rel="noopener noreferrer" class="special">Learn more</a>
 						</article>
 					</section>
 				</div>
 			</div>
+		</section>
 
-			<!-- Footer -->
-			<section id="footer">
-				<div class="inner">
-					<h2 class="major">Contact details and Socials</h2>
-					<ul class="contact">
-						<li class="icon solid fa-envelope">
-							<a href="mailto:thomas.williams@abo.fi" target="_blank" rel="noopener">thomas.williams@abo.fi</a>
-						</li>
-						<li class="icon brands fa-twitter">
-							<a href="https://twitter.com/tjw_97" target="_blank">tjw_97</a>
-						</li>
-						<li class="icon brands fa-linkedin">
-							<a href="https://www.linkedin.com/in/tjwinspire/" target="_blank">tjw-inspire</a>
-						</li>
-						<li class="icon brands fa-github">
-							<a href="https://github.com/tjw-benth" target="_blank">tjw-benth</a>
-						</li>
-						<li class="icon brands fa-researchgate">
-							<a href="https://www.researchgate.net/profile/Thomas-Williams-3" target="_blank">Thomas Williams</a>
-						</li>
-						<li class="icon brands fa-orcid">
-							<a href="https://orcid.org/0000-0002-6616-955X" target="_blank">Thomas Williams</a>
-						</li>
-						<li class="icon solid fa-home">
-							<a href="https://www.abo.fi/en/faculty-of-science-and-engineering/" target="_blank">
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<h2 class="major">Contact Details and Socials</h2>
+				<ul class="contact">
+					<li class="icon solid fa-envelope">
+						<a href="mailto:thomas.williams@abo.fi" target="_blank" rel="noopener noreferrer">thomas.williams@abo.fi</a>
+					</li>
+					<li class="icon brands fa-twitter">
+						<a href="https://twitter.com/tjw_97" target="_blank" rel="noopener noreferrer">@tjw_97</a>
+					</li>
+					<li class="icon brands fa-linkedin">
+						<a href="https://www.linkedin.com/in/tjwinspire/" target="_blank" rel="noopener noreferrer">tjw-inspire</a>
+					</li>
+					<li class="icon brands fa-github">
+						<a href="https://github.com/tjw-benth" target="_blank" rel="noopener noreferrer">tjw-benth</a>
+					</li>
+					<li class="icon brands fa-researchgate">
+						<a href="https://www.researchgate.net/profile/Thomas-Williams-3" target="_blank" rel="noopener noreferrer">Thomas Williams</a>
+					</li>
+					<li class="icon brands fa-orcid">
+						<a href="https://orcid.org/0000-0002-6616-955X" target="_blank" rel="noopener noreferrer">Thomas Williams</a>
+					</li>
+					<li class="icon solid fa-home">
+						<address>
+							<a href="https://www.abo.fi/en/faculty-of-science-and-engineering/" target="_blank" rel="noopener noreferrer">
 								Aurum / Faculty of Science and Engineering<br />
 								Åbo Akademi University<br />
 								Henrikinkatu 2<br />
 								20500 Turku<br />
 								Finland
 							</a>
-						</li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; TJW 2026. All rights reserved.</li>
-						<li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</section>
-		</section>
+						</address>
+					</li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; TJW 2026. All rights reserved.</li>
+					<li>Design: <a href="https://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
 	</div>
 
 	<!-- Scripts -->
@@ -211,5 +236,17 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<!-- Analytics: GoatCounter (privacy-friendly, no cookies) -->
+	<script data-goatcounter="https://tjw-benth.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+	<!-- CV download tracking -->
+	<script>
+		document.querySelectorAll('a[href="williams_CV.pdf"]').forEach(function(link) {
+			link.addEventListener('click', function() {
+				if (window.goatcounter && window.goatcounter.count) {
+					window.goatcounter.count({ path: '/cv-download', title: 'CV Download' });
+				}
+			});
+		});
+	</script>
 </body>
 </html>

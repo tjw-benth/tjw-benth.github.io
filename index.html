@@ -8,10 +8,19 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<meta name="description" content="Tom Williams - Arctic Marine Ecologist and Aspiring Data Scientist at University of Southampton">
-	<meta name="keywords" content="marine ecology, Arctic ecosystems, data science, biodiversity, Southampton">
+	<meta name="description" content="Tom Williams — Arctic marine ecologist and research fellow at Åbo Akademi University, specialising in benthic ecology, biodiversity, and data-driven approaches to environmental change.">
+	<meta name="keywords" content="marine ecology, Arctic ecosystems, data science, biodiversity, Åbo Akademi, benthic ecology, quantitative ecology">
 	<meta name="author" content="Tom Williams">
 	<title>Tom Williams - Arctic Marine Ecologist</title>
+	<link rel="icon" href="favicon.png" type="image/png">
+	<!-- Open Graph / Social sharing -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Tom Williams — Arctic Marine Ecologist">
+	<meta property="og:description" content="Tom Williams — Arctic marine ecologist and research fellow at Åbo Akademi University, specialising in benthic ecology, biodiversity, and data-driven approaches to environmental change.">
+	<meta property="og:url" content="https://tjw-benth.github.io/">
+	<meta property="og:image" content="https://tjw-benth.github.io/images/profile_shot.JPG">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@tjw_97">
 	<link rel="stylesheet" href="assets/css/main.css">
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
 </head>
@@ -36,7 +45,7 @@
 					<li><a href="projects.html">Projects</a></li>
 					<li><a href="datascience.html">Data Science</a></li>
 					<li><a href="#footer">Contact</a></li>
-					<li><a href="#" aria-label="Download CV">CV</a></li>
+					<li><a href="williams_CV.pdf" aria-label="Download CV">CV</a></li>
 				</ul>
 				<button type="button" class="close" aria-label="Close menu">Close</button>
 			</div>
@@ -136,29 +145,28 @@
 		<footer id="footer">
 			<div class="inner">
 				<h2 class="major">Contact Details and Socials</h2>
-				<address>
-					<ul class="contact">
-						<li class="icon solid fa-envelope">
-							<a href="mailto:thomas.williams@abo.fi" target="_blank" rel="noopener">thomas.williams@abo.fi</a>
-						</li>
-						<li class="icon brands fa-twitter">
-							<a href="https://twitter.com/tjw_97" target="_blank" rel="noopener noreferrer">@tjw_97</a>
-						</li>
-						<li class="icon brands fa-linkedin">
-							<a href="https://www.linkedin.com/in/tjwinspire/" target="_blank" rel="noopener noreferrer">tjw-inspire</a>
-						</li>
-						<li class="icon brands fa-github">
-							<a href="https://github.com/tjw-benth" target="_blank" rel="noopener noreferrer">tjw-benth</a>
-						</li>
-						<li class="icon brands fa-researchgate">
-							<a href="https://www.researchgate.net/profile/Thomas-Williams-3" target="_blank" rel="noopener noreferrer">Thomas Williams</a>
-						</li>
-						<li class="icon brands fa-orcid">
-							<a href="https://orcid.org/0000-0002-6616-955X" target="_blank" rel="noopener noreferrer">Thomas Williams</a>
-						</li>
-						<li class="icon solid fa-home">
+				<ul class="contact">
+					<li class="icon solid fa-envelope">
+						<a href="mailto:thomas.williams@abo.fi" target="_blank" rel="noopener noreferrer">thomas.williams@abo.fi</a>
+					</li>
+					<li class="icon brands fa-twitter">
+						<a href="https://twitter.com/tjw_97" target="_blank" rel="noopener noreferrer">@tjw_97</a>
+					</li>
+					<li class="icon brands fa-linkedin">
+						<a href="https://www.linkedin.com/in/tjwinspire/" target="_blank" rel="noopener noreferrer">tjw-inspire</a>
+					</li>
+					<li class="icon brands fa-github">
+						<a href="https://github.com/tjw-benth" target="_blank" rel="noopener noreferrer">tjw-benth</a>
+					</li>
+					<li class="icon brands fa-researchgate">
+						<a href="https://www.researchgate.net/profile/Thomas-Williams-3" target="_blank" rel="noopener noreferrer">Thomas Williams</a>
+					</li>
+					<li class="icon brands fa-orcid">
+						<a href="https://orcid.org/0000-0002-6616-955X" target="_blank" rel="noopener noreferrer">Thomas Williams</a>
+					</li>
+					<li class="icon solid fa-home">
 						<address>
-							<a href="https://www.abo.fi/en/faculty-of-science-and-engineering/" target="_blank">
+							<a href="https://www.abo.fi/en/faculty-of-science-and-engineering/" target="_blank" rel="noopener noreferrer">
 								Aurum / Faculty of Science and Engineering<br />
 								Åbo Akademi University<br />
 								Henrikinkatu 2<br />
@@ -166,12 +174,11 @@
 								Finland
 							</a>
 						</address>
-						</li>
-					</ul>
-				</address>
+					</li>
+				</ul>
 				<ul class="copyright">
 					<li>&copy; TJW 2026. All rights reserved.</li>
-					<li>Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a></li>
+					<li>Design: <a href="https://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a></li>
 				</ul>
 			</div>
 		</footer>
@@ -185,5 +192,17 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/fetchprojects.js"></script>
+	<!-- Analytics: GoatCounter (privacy-friendly, no cookies) -->
+	<script data-goatcounter="https://tjw-benth.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+	<!-- CV download tracking -->
+	<script>
+		document.querySelectorAll('a[href="williams_CV.pdf"]').forEach(function(link) {
+			link.addEventListener('click', function() {
+				if (window.goatcounter && window.goatcounter.count) {
+					window.goatcounter.count({ path: '/cv-download', title: 'CV Download' });
+				}
+			});
+		});
+	</script>
 </body>
 </html>
