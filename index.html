@@ -71,7 +71,7 @@
 			<section id="one" class="wrapper spotlight style1">
 				<div class="inner">
 					<div class="image">
-						<img src="images/profile_shot.JPG" alt="Tom Williams profile photo">
+						<img loading="lazy" src="images/profile_shot.JPG" alt="Tom Williams profile photo">
 					</div>
 					<div class="content">
 						<h2 class="major">Biography</h2>
@@ -86,7 +86,7 @@
 			<section id="two" class="wrapper alt spotlight style2">
 				<div class="inner">
 					<div class="image">
-						<img src="images/TJW_Arctic_clothing.JPG" alt="Tom Williams in Arctic research clothing">
+						<img loading="lazy" src="images/TJW_Arctic_clothing.JPG" alt="Tom Williams in Arctic research clothing">
 					</div>
 					<div class="content">
 						<h2 class="major">Research Interests</h2>
@@ -129,6 +129,19 @@
 				</div>
 			</section>
 
+			<!-- Latest News / Bluesky Feed -->
+			<section id="news" class="wrapper style4">
+				<div class="inner">
+					<h2 class="major">Latest News</h2>
+					<p>Follow along on <a href="https://bsky.app/profile/tjw97.bsky.social" target="_blank" rel="noopener noreferrer">@tjw97.bsky.social</a> for updates on research, fieldwork, and data science.</p>
+					<bsky-embed
+						username="tjw97.bsky.social"
+						limit="5"
+						load-more="false">
+					</bsky-embed>
+				</div>
+			</section>
+
 			<!-- Projects Section -->
 			<section id="four" class="wrapper alt style2">
 				<div class="inner">
@@ -149,7 +162,7 @@
 					<li class="icon solid fa-envelope">
 						<a href="mailto:thomas.williams@abo.fi" target="_blank" rel="noopener noreferrer">thomas.williams@abo.fi</a>
 					</li>
-					<li class="icon brands fa-twitter">
+					<li class="icon brands fa-x-twitter">
 						<a href="https://twitter.com/tjw_97" target="_blank" rel="noopener noreferrer">@tjw_97</a>
 					</li>
 					<li class="icon brands fa-linkedin">
@@ -163,6 +176,15 @@
 					</li>
 					<li class="icon brands fa-orcid">
 						<a href="https://orcid.org/0000-0002-6616-955X" target="_blank" rel="noopener noreferrer">Thomas Williams</a>
+					</li>
+					<li class="icon solid fa-graduation-cap">
+						<a href="https://scholar.google.com/citations?user=3uMUK9wAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+					</li>
+					<li class="icon solid fa-id-card">
+						<a href="https://sciprofiles.com/profile/tjw-benth" target="_blank" rel="noopener noreferrer">SciProfiles</a>
+					</li>
+					<li class="icon brands fa-bluesky">
+						<a href="https://bsky.app/profile/tjw97.bsky.social" target="_blank" rel="noopener noreferrer">@tjw97.bsky.social</a>
 					</li>
 					<li class="icon solid fa-home">
 						<address>
@@ -192,6 +214,8 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/fetchprojects.js"></script>
+	<!-- Bluesky embed feed -->
+	<script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js"></script>
 	<!-- Analytics: GoatCounter (privacy-friendly, no cookies) -->
 	<script data-goatcounter="https://tjw-benth.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 	<!-- CV download tracking -->
