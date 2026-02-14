@@ -345,106 +345,28 @@
 				});
 			});
 					
-			// TidyTuesday projects data
-			const tidyTuesdayProjects = [
-				{
-					title: "Zurich's Exploding Snowman",
-					date: "December 02, 2025",
-					url: "https://github.com/tjw-benth/TidyTuesday/blob/main/r_scripts/2025/Week48/Week48_analysis.R",
-					image: "https://raw.githubusercontent.com/tjw-benth/TidyTuesday/main/outputs/2025/Week48_folk_science_symphony.png",
-					alt: "Sechseläuten festival Böögg analysis",
-					description: "Analysis of the Sechseläuten festival tradition - testing if Zurich's exploding Böögg snowman can predict summer weather using correlation analysis and visualization."
-				},
-				{
-					title: "xkcd Color Survey Results",
-					date: "July 08, 2025",
-					url: "https://github.com/tjw-benth/TidyTuesday/blob/main/r_scripts/2025/Week27/Week27_analysis.R",
-					image: "https://raw.githubusercontent.com/tjw-benth/TidyTuesday/main/outputs/2025/Week27_XKCD_Color_Survey_Dashboard.png",
-					alt: "xkcd Color Survey Dashboard",
-					description: "Analysis of the xkcd Color Survey Results using Tidyverse and ggplot2."
-				},
-				{
-					title: "APIs.guru Web APIs Analysis",
-					date: "June 17, 2025",
-					url: "https://github.com/tjw-benth/TidyTuesday/blob/main/r_scripts/2025/Week24/Week24_analysis.R",
-					image: "https://raw.githubusercontent.com/tjw-benth/TidyTuesday/main/outputs/2025/Week24_WebAPIs_Dashboard.png",
-					alt: "Web APIs Dashboard Plot",
-					description: "Analysis of Web APIs dataset from APIs.guru using Tidyverse and ggplot2."
-				},
-				{
-					title: "Project Gutenberg Digital Library Analysis",
-					date: "June 03, 2025",
-					url: "https://github.com/tjw-benth/TidyTuesday/blob/main/r_scripts/2025/Week22/Week22_analysis.R",
-					image: "https://raw.githubusercontent.com/tjw-benth/TidyTuesday/main/outputs/2025/Week22_Gutenberg_Dashboard.png",
-					alt: "Project Gutenberg Dashboard Plot",
-					description: "Analysis of Project Gutenberg digital library collection using Tidyverse and ggplot2."
-				},
-				{
-					title: "Dungeons and Dragons Monsters Analysis",
-					date: "May 27, 2025",
-					url: "https://github.com/tjw-benth/TidyTuesday/blob/main/r_scripts/2025/Week21/Week21_analysis.R",
-					image: "https://raw.githubusercontent.com/tjw-benth/TidyTuesday/main/outputs/2025/Week21_DnD_Dashboard.png",
-					alt: "DnD Monsters Dashboard Plot",
-					description: "Analyzed Dungeons and Dragons Monsters (2024) data using Tidyverse and ggplot2."
-				},
-				{
-					title: "Sydney Water Quality Analysis",
-					date: "May 21, 2025",
-					url: "https://github.com/tjw-benth/TidyTuesday/blob/main/r_scripts/2025/Week20/Week20_analysis.R",
-					image: "https://raw.githubusercontent.com/tjw-benth/TidyTuesday/main/outputs/2025/Week20_dashboard.png",
-					alt: "Sydney Swimming Sites Dashboard Plot",
-					description: "Analyzed Sydney Water Quality data using Tidyverse and ggplot2."
-				},
-				{
-					title: "Pokemon Analysis",
-					date: "April 1, 2025",
-					url: "https://github.com/tjw-benth/TidyTuesday/blob/main/r_scripts/2025/Week13/Week13_analysis.R",
-					image: "https://raw.githubusercontent.com/tjw-benth/TidyTuesday/main/outputs/2025/Week13_pokemon_dashboard.png",
-					alt: "Pokemon Dashboard Plot",
-					description: "Analyzed Pokemon data using Tidyverse and ggplot2."
-				},
-				{
-					title: "Long Beach Island Shelter Analysis",
-					date: "March 4, 2025",
-					url: "https://github.com/tjw-benth/TidyTuesday/blob/main/r_scripts/2025/Week9/Week9_analysis.R",
-					image: "https://raw.githubusercontent.com/tjw-benth/TidyTuesday/main/outputs/2025/Week9_plot1.png",
-					alt: "Long Beach Shelter Plot",
-					description: "Analyzed Long Beach Island Shelter data using Tidyverse and ggplot2."
-				},
-				{
-					title: "FBI Crime Data Analysis",
-					date: "February 21, 2025",
-					url: "https://github.com/tjw-benth/TidyTuesday/blob/main/r_scripts/2025/Week7/Week7_analysis.R",
-					image: null,
-					alt: null,
-					description: "Analyzed FBI Crime data using Tidyverse and ggplot2."
-				}
-			];
-
-			// Function to shuffle array and select random items
-			function getRandomProjects(projects, count) {
-				const shuffled = [...projects].sort(() => 0.5 - Math.random());
-				return shuffled.slice(0, count);
-			}
-
-			// Function to render TidyTuesday highlights
-			function renderTidyTuesdayHighlights() {
-				const container = document.getElementById('tidytuesday-highlights');
-				if (!container) return;
-				
-				const randomProjects = getRandomProjects(tidyTuesdayProjects, 2);
-				
-				container.innerHTML = randomProjects.map(project => `
-					<div class="tidytuesday-project">
-						<h3><a href="${project.url}" target="_blank" rel="noopener noreferrer">${project.date} - ${project.title}</a></h3>
-						<p>${project.description}</p>
-						${project.image ? `<img src="${project.image}" alt="${project.alt}" loading="lazy">` : ''}
-					</div>
-				`).join('');
-			}
-
-			// Initialize the highlights on page load
-			renderTidyTuesdayHighlights();
+			// TidyTuesday: fetch live from Tidytuesday_index.json in the TidyTuesday repo
+			fetch('https://raw.githubusercontent.com/tjw-benth/TidyTuesday/main/Tidytuesday_index.json')
+				.then(function(r) { return r.json(); })
+				.then(function(projects) {
+					var container = document.getElementById('tidytuesday-highlights');
+					if (!container || !projects || projects.length === 0) return;
+					// Pick 2 random projects that have an image
+					var withImages = projects.filter(function(p) { return p.image; });
+					var pool = withImages.length >= 2 ? withImages : projects;
+					var shuffled = pool.slice().sort(function() { return 0.5 - Math.random(); });
+					var picks = shuffled.slice(0, 2);
+					container.innerHTML = picks.map(function(p) {
+						return '<div class="tidytuesday-project">'
+							+ '<h3><a href="' + p.script + '" target="_blank" rel="noopener noreferrer">' + p.title + '</a></h3>'
+							+ '<p>' + p.description + '</p>'
+							+ (p.image ? '<img src="' + p.image + '" alt="' + p.title + '" loading="lazy">' : '')
+							+ '</div>';
+					}).join('');
+				})
+				.catch(function() {
+					// Silently fail — section simply stays empty
+				});
 
 			// CV download tracking
 			document.querySelectorAll('a[href="williams_CV.pdf"]').forEach(function(link) {
