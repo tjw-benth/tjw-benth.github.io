@@ -69,8 +69,8 @@
 
 		<!-- Main Content -->
 		<main id="wrapper">
-			<!-- Biography Section -->
-			<section id="one" class="wrapper spotlight style1">
+			<!-- Biography + Education Section -->
+			<section id="one" class="wrapper spotlight style2">
 				<div class="inner">
 					<div class="image">
 						<img loading="lazy" src="images/profile_shot.JPG" alt="Tom Williams profile photo">
@@ -80,12 +80,16 @@
 						<p>
 							I'm Tom Williams, a research fellow at Åbo Akademi University in Turku, Finland, and a marine biologist by training with a growing focus on quantitative ecology. My research centres on understanding how marine biodiversity responds to environmental change and multiple stressors, and how these dynamics influence ecosystem functioning.
 						</p>
+						<ul class="icons" style="margin-top: 1em;">
+							<li><i class="fas fa-graduation-cap" aria-hidden="true"></i> &nbsp;<strong>PhD</strong> Marine Ecology — University of Southampton (2023)</li>
+							<li><i class="fas fa-graduation-cap" aria-hidden="true"></i> &nbsp;<strong>MSci</strong> Marine Biology — University of Southampton (2019)</li>
+						</ul>
 					</div>
 				</div>
 			</section>
 
 			<!-- Research Interests Section -->
-			<section id="two" class="wrapper alt spotlight style2">
+			<section id="two" class="wrapper alt spotlight style3">
 				<div class="inner">
 					<div class="image">
 						<img loading="lazy" src="images/TJW_Arctic_clothing.JPG" alt="Tom Williams in Arctic research clothing">
@@ -104,44 +108,17 @@
 			</section>
 
 			<!-- Field Sites Map -->
-			<section id="fieldmap" class="wrapper alt style3">
+			<section id="fieldmap" class="wrapper style4">
 				<div class="inner">
-					<h2 class="major">Field Sites</h2>
-					<p>Research expeditions and field sites spanning the Arctic, sub-Arctic, and UK coasts.</p>
+					<h2 class="major">Scientific Footprint</h2>
+					<p>Research positions, expeditions, field sites, and collaborations across the Arctic, sub-Arctic, North Atlantic, and beyond. Click a marker for details.</p>
 					<div id="field-map" style="height: 420px; border-radius: 6px; overflow: hidden;"></div>
 				</div>
 			</section>
 
-			<!-- Education Section -->
-			<section id="three" class="wrapper spotlight style4">
-				<div class="inner">
-					<div class="content">
-						<h2 class="major">Education</h2>
-						<dl class="education-list">
-							<div class="education-item">
-								<dt class="degree">
-									<i class="fas fa-graduation-cap" aria-hidden="true"></i>
-									PhD in Marine Ecology
-								</dt>
-								<dd class="institution">University of Southampton, UK</dd>
-								<dd class="year">2023</dd>
-							</div>
-							<br>
-							<div class="education-item">
-								<dt class="degree">
-									<i class="fas fa-graduation-cap" aria-hidden="true"></i>
-									MSci in Marine Biology
-								</dt>
-								<dd class="institution">University of Southampton, UK</dd>
-								<dd class="year">2019</dd>
-							</div>
-						</dl>
-					</div>
-				</div>
-			</section>
 
 			<!-- Latest News / Bluesky Feed -->
-			<section id="news" class="wrapper style5">
+			<section id="news" class="wrapper alt style5">
 				<div class="inner">
 					<h2 class="major">Latest News</h2>
 					<p>Follow along on <a href="https://bsky.app/profile/tjw97.bsky.social" target="_blank" rel="noopener noreferrer">@tjw97.bsky.social</a> for updates on research, fieldwork, and data science.</p>
@@ -154,7 +131,7 @@
 			</section>
 
 			<!-- Projects Section -->
-			<section id="four" class="wrapper alt style6">
+			<section id="four" class="wrapper style6">
 				<div class="inner">
 					<h2 class="major">Previous and Current Projects</h2>
 					<div id="featured-projects"></div>
@@ -237,24 +214,44 @@
 				subdomains: 'abcd',
 				maxZoom: 19
 			}).addTo(map);
+			// colour key: blue = positions/institutions, orange = sea expeditions, green = workshops/collaborations/training
 			var sites = [
-				{ name: 'SEA-Quester / Åbo Akademi University',    lat: 60.45,  lon: 22.27,  note: 'Current position & SEA-Quester project (2025–present)' },
-				{ name: 'Svalbard (Arctic)',                         lat: 78.22,  lon: 15.65,  note: 'Arctic field research & BOWIE project' },
-				{ name: 'NE Greenland',                              lat: 74.5,   lon: -20.0,  note: 'UK–Greenland Research Capacity (2023)' },
-				{ name: 'Canadian Arctic (Amundsen Expedition)',     lat: 70.0,   lon: -95.0,  note: 'Amundsen research expedition (2021)' },
-				{ name: 'Southampton, UK',                           lat: 50.90,  lon: -1.40,  note: 'PhD & MSci — University of Southampton (2019–2023)' },
-				{ name: 'UK Coasts (BLUEcoast / ChAOS)',             lat: 53.0,   lon: -4.0,   note: 'Coastal field experiments: BLUEcoast (2019), JR18006 (2019)' },
-				{ name: 'Russia (UK–Russia Workshop)',               lat: 59.95,  lon: 30.32,  note: 'UK–Russia Science Workshop, St. Petersburg (2020)' }
+				// Positions & institutions
+				{ lat: 60.45,  lng: 22.27,  color: '#4fc3f7', name: 'Åbo Akademi University, Turku, Finland',               note: 'Research Fellow — SEA-Quester (EU 101136480), 2025–present' },
+				{ lat: 50.93,  lng: -1.40,  color: '#4fc3f7', name: 'University of Southampton, UK',                         note: 'PhD Marine Ecology (2019–2023) · PDRA: BOWIE — geospatial analysis &amp; experiments on offshore wind impacts on UK benthos (NE/X008991/1, 2024–2025) · ITV traits project (NE/T001577/1, 2024)' },
+
+				// Sea expeditions
+				{ lat: 64.18,  lng: -51.72, color: '#ff8a65', name: 'Nuuk, Greenland',                                      note: 'UK–Greenland Research Capacity — fjordic benthic contamination (2023)' },
+				{ lat: 70.0,   lng: -95.0,  color: '#ff8a65', name: 'Canadian Arctic (CCGS Amundsen)',                      note: 'ArcticNet Expedition — mesocosm incubations &amp; ROV deep-water coral dives (2021)' },
+				{ lat: 75.0,   lng: 18.0,   color: '#ff8a65', name: 'Barents Sea / ChAOS (RRS James Clark Ross, JR18006)',  note: 'Changing Arctic Ocean Seafloor expedition — sea-ice gradient sampling (2019)' },
+				{ lat: 10.73,  lng: 103.23, color: '#ff8a65', name: 'Koh Rong Island, Cambodia',                            note: 'Tropical reef conservation — artificial reef construction &amp; PADI Advanced OWD (2016)' },
+
+				// Research training
+				{ lat: 50.89,  lng: -1.39,  color: '#ce93d8', name: 'National Oceanography Centre Southampton',             note: 'Flume experiments — BLUEcoast storm simulation on benthic sediments (2019)' },
+				{ lat: 50.93,  lng: -1.43,  color: '#ce93d8', name: 'University Hospital Southampton (X-ray Histology)',    note: 'µ-CT reconstruction of deep-water coral skeletal architecture (2021)' },
+				{ lat: 66.34,  lng: 33.65,  color: '#ce93d8', name: 'White Sea Biological Station "Kartesh", Russia',      note: 'Planned larval reproduction training — cancelled due to COVID-19' },
+
+				// Workshops & collaborations
+				{ lat: 59.95,  lng: 30.32,  color: '#a5d6a7', name: 'St. Petersburg, Russia',                               note: 'UK–Russia Science Workshop — climate change effects on Arctic benthos (2020)' },
+				{ lat: 48.38,  lng: -4.62,  color: '#a5d6a7', name: 'Plouzané, Brittany, France (Ifremer)',                           note: 'Workshop on Functional Roles of Benthic Ecosystem Engineers (2023)' },
+				{ lat: 51.50,  lng: -0.12,  color: '#a5d6a7', name: 'UK (remote / APECS)',                                  note: 'Communication of Climate Change in the Arctic &amp; Science &amp; Diplomacy projects (2021–2022)' }
 			];
+			var legend = '<div style="font-size:11px;line-height:1.8em">'
+				+ '<span style="color:#4fc3f7">&#9679;</span> Position/institution &nbsp;'
+				+ '<span style="color:#ff8a65">&#9679;</span> Expedition &nbsp;'
+				+ '<span style="color:#ce93d8">&#9679;</span> Research training &nbsp;'
+				+ '<span style="color:#a5d6a7">&#9679;</span> Workshop/collaboration'
+				+ '</div>';
+			document.getElementById('field-map').insertAdjacentHTML('afterend', legend);
 			sites.forEach(function(s) {
-				L.circleMarker([s.lat, s.lon], {
+				L.circleMarker([s.lat, s.lng], {
 					radius: 7,
-					fillColor: '#4fc3f7',
+					fillColor: s.color,
 					color: '#ffffff',
 					weight: 1.5,
 					opacity: 1,
 					fillOpacity: 0.85
-				}).addTo(map).bindPopup('<strong>' + s.name + '</strong><br>' + s.note);
+				}).addTo(map).bindPopup('<strong>' + s.name + '</strong><br><span style="color:#aaa;font-size:0.9em">' + s.note + '</span>');
 			});
 		})();
 	</script>
