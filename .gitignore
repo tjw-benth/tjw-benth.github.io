@@ -1,3 +1,10 @@
 .DS_Store
 Thumbs.db
 .claude/settings.local.json
+
+# Audit/working documents
+*Audit*.md
+*Plan.md
+*Overview.md
+*Review.md
+*Report.md
