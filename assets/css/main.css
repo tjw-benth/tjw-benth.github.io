@@ -4241,3 +4241,57 @@ input, select, textarea {
 		}
 
 	}
+
+/* =====================================================================
+   Audience toggle
+   ===================================================================== */
+
+body[data-mode="general"] .academic-only { display: none !important; }
+body[data-mode="academic"] .general-only { display: none !important; }
+body:not([data-mode]) .general-only { display: none !important; }
+
+#audience-toggle {
+	background: none;
+	border: 1px solid rgba(255,255,255,0.3);
+	border-radius: 3px;
+	color: rgba(255,255,255,0.75);
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 0.6em;
+	letter-spacing: 0.1em;
+	padding: 0.35em 0.8em;
+	text-transform: uppercase;
+	vertical-align: middle;
+	margin-left: 1em;
+	transition: border-color 0.2s, color 0.2s;
+}
+
+#audience-toggle:hover {
+	border-color: rgba(255,255,255,0.7);
+	color: #fff;
+}
+
+/* Impact numbers strip */
+.numbers-strip {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2em;
+	justify-content: space-around;
+	text-align: center;
+	margin: 1.5em 0 0.5em;
+}
+
+.numbers-strip .stat-value {
+	display: block;
+	font-size: 2.4em;
+	font-weight: 700;
+	color: #fff;
+	line-height: 1;
+}
+
+.numbers-strip .stat-label {
+	display: block;
+	font-size: 0.82em;
+	color: #ccc;
+	margin-top: 0.3em;
+}

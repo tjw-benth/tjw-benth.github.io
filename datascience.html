@@ -33,6 +33,7 @@
 				<h1><a href="index.html">TJW</a></h1>
 				<nav>
 					<a href="#menu" aria-label="Open navigation menu">Menu</a>
+					<button id="audience-toggle" aria-label="Toggle audience mode">Switch to: General</button>
 				</nav>
 			</header>
 
@@ -66,6 +67,17 @@
 				<div class="wrapper">
 					<div class="inner">
 						<div class="content">
+							<!-- My Work Section -->
+							<h2 class="major">My Work</h2>
+
+							<h3>Analytical toolkit</h3>
+							<p>My quantitative work spans community ecology (PERMANOVA, constrained and unconstrained ordination via vegan), mixed-effects and GLS models for heteroscedastic biological data (nlme, following Zuur protocols), generalised linear latent variable models for multivariate abundance data (gllvm), functional trait analysis including community-weighted means and trait-based dissimilarity (FD, betapart), and Bayesian modelling (brms). Analyses are organised into reproducible pipelines using targets.</p>
+
+							<h3>Open work</h3>
+							<p>I maintain an open archive of TidyTuesday data visualisation projects — weekly practice in exploratory analysis, ggplot2, and communicating data clearly. All code is public: <a href="https://github.com/tjw-benth/TidyTuesday" target="_blank" rel="noopener noreferrer">github.com/tjw-benth/TidyTuesday</a>.</p>
+
+							<hr>
+
 							<!-- TidyTuesday Section -->
 							<h2 class="major">TidyTuesday Projects</h2>
 							<p>
@@ -83,6 +95,8 @@
 								<!-- Dynamic content will be inserted here -->
 							</div>
 
+							<!-- Resources: academic audience -->
+							<div class="academic-only">
 							<!-- R packages Section -->
 							<section>
 								<h2 class="major"><i class="fab fa-r-project" aria-hidden="true"></i> R packages</h2>
@@ -267,7 +281,8 @@
 									</div>
 									<a href="https://rmarkdown.rstudio.com/" target="_blank" rel="noopener noreferrer" class="special">Learn more</a>
 								</article>	
-							</section>	
+							</section>
+							</div><!-- end .academic-only -->
 						</div>
 					</div>
 				</div>
@@ -333,6 +348,7 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="assets/js/toggle.js"></script>
 		<script>
 			document.addEventListener("DOMContentLoaded", function () {
 				const expandLinks = document.querySelectorAll(".special");
