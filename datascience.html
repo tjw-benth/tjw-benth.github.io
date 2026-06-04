@@ -59,7 +59,12 @@
 					<div class="inner">
 						<span class="fas fa-dragon" style="font-size:24px;"></span>
 						<h2>Data Science</h2>
-						<p>What I have found over the years and use frequently. Of use for R beginners and those who want to refresh their memory. For data-driven research outputs, see my <a href="projects.html">research projects</a>.</p>
+						<div class="academic-only">
+						<p>My statistical toolkit has been built project by project. Below are the packages I actually use, in contexts where defaults break: mixed models with complex variance structures, multivariate abundance data, functional diversity indices, Bayesian hierarchical models. The resources section is kept for students and ECRs who find it useful.</p>
+					</div>
+					<div class="general-only">
+						<p>Ecological data is messy: different species sampled at different rates, environments that vary in ways that matter statistically, thousands of observations that need to be compared across different conditions. Below are the tools I use to deal with that honestly. The resources section has guides and references for anyone getting started with R.</p>
+					</div>
 					</div>
 				</header>
 
@@ -110,8 +115,45 @@
 								</ul>
 								<br>
 								<h3 class="major"><i class="fas fa-calculator" aria-hidden="true"></i> Data analysis</h3>
+
+								<h3>Mixed models &amp; GLS</h3>
 								<ul>
-									<li><i class="fas fa-seedling" aria-hidden="true"></i> <a href="https://github.com/vegandevs/vegan" target="_blank" rel="noopener noreferrer">vegan</a> - Community ecology package</li>
+									<li><a href="https://cran.r-project.org/web/packages/nlme/index.html" target="_blank" rel="noopener noreferrer">nlme</a> — GLS and linear mixed models; heteroscedastic variance structures</li>
+									<li><a href="https://glmmtmb.github.io/glmmTMB/" target="_blank" rel="noopener noreferrer">glmmTMB</a> — generalised mixed models with flexible variance and zero-inflation</li>
+									<li><a href="https://cran.r-project.org/web/packages/lme4/index.html" target="_blank" rel="noopener noreferrer">lme4</a> — standard mixed-effects models</li>
+								</ul>
+
+								<h3>Multivariate ecology</h3>
+								<ul>
+									<li><a href="https://github.com/vegandevs/vegan" target="_blank" rel="noopener noreferrer">vegan</a> — community ecology; PERMANOVA, ordination, diversity indices</li>
+									<li><a href="https://jenniniku.github.io/gllvm/" target="_blank" rel="noopener noreferrer">gllvm</a> — generalised linear latent variable models for multivariate abundance data</li>
+									<li><a href="https://cran.r-project.org/web/packages/betapart/index.html" target="_blank" rel="noopener noreferrer">betapart</a> — beta diversity partitioning</li>
+								</ul>
+
+								<h3>Functional diversity</h3>
+								<ul>
+									<li><a href="https://cran.r-project.org/web/packages/FD/index.html" target="_blank" rel="noopener noreferrer">FD</a> — functional diversity indices and community-weighted means</li>
+								</ul>
+
+								<h3>Post-hoc inference &amp; model selection</h3>
+								<ul>
+									<li><a href="https://cran.r-project.org/web/packages/emmeans/index.html" target="_blank" rel="noopener noreferrer">emmeans</a> — estimated marginal means and contrasts</li>
+									<li><a href="https://cran.r-project.org/web/packages/MuMIn/index.html" target="_blank" rel="noopener noreferrer">MuMIn</a> — multi-model inference and AICc selection</li>
+								</ul>
+
+								<h3>Model validation</h3>
+								<ul>
+									<li><a href="https://cran.r-project.org/web/packages/DHARMa/index.html" target="_blank" rel="noopener noreferrer">DHARMa</a> — residual diagnostics for hierarchical models using simulation</li>
+								</ul>
+
+								<h3>Bayesian</h3>
+								<ul>
+									<li><a href="https://paul-buerkner.github.io/brms/" target="_blank" rel="noopener noreferrer">brms</a> — Bayesian mixed models via Stan</li>
+								</ul>
+
+								<h3>Reproducible pipelines</h3>
+								<ul>
+									<li><a href="https://docs.ropensci.org/targets/" target="_blank" rel="noopener noreferrer">targets</a> — pipeline toolkit for reproducible R workflows</li>
 								</ul>
 								<br>
 								<h3 class="major"><i class="fas fa-chart-line" aria-hidden="true"></i> Plotting</h3>
@@ -165,12 +207,22 @@
 								<br>
 								<article>
 									<h3 class="major">
-										<i class="fas fa-cogs" aria-hidden="true"></i> 
+										<i class="fas fa-cogs" aria-hidden="true"></i>
 										<a href="https://raps-with-r.dev/" target="_blank" rel="noopener noreferrer">
 											Building reproducible analytical pipelines with R
 										</a>
 									</h3>
 									<p><i class="fas fa-user" aria-hidden="true"></i> <em>Bruno Rodrigues</em></p>
+								</article>
+								<br>
+								<article>
+									<h3 class="major">
+										<i class="fab fa-r-project" aria-hidden="true"></i>
+										<a href="https://www.springer.com/gp/book/9780387874579" target="_blank" rel="noopener noreferrer">
+											Mixed Effects Models and Extensions in Ecology with R
+										</a>
+									</h3>
+									<p><i class="fas fa-users" aria-hidden="true"></i> <em>Alain Zuur, Elena Ieno, Neil Walker, Anatoly Saveliev &amp; Graham Smith</em></p>
 								</article>
 							</section>
 							<br>
