@@ -4295,3 +4295,77 @@ body:not([data-mode]) .general-only { display: none !important; }
 	color: #ccc;
 	margin-top: 0.3em;
 }
+
+/* Conference photo carousel — native scroll-snap, so touch swiping needs no library;
+   the prev/next buttons (index.html inline script) page through it on desktop */
+.photo-carousel {
+	position: relative;
+}
+
+.photo-carousel-track {
+	display: flex;
+	gap: 1em;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+	scrollbar-width: none;
+}
+
+.photo-carousel-track::-webkit-scrollbar {
+	display: none;
+}
+
+.photo-carousel figure {
+	flex: 0 0 calc(50% - 0.5em);
+	margin: 0;
+	scroll-snap-align: start;
+}
+
+.photo-carousel img {
+	aspect-ratio: 4 / 3;
+	border-radius: 4px;
+	display: block;
+	height: auto;
+	object-fit: cover;
+	width: 100%;
+}
+
+.photo-carousel figcaption {
+	color: #ccc;
+	font-size: 0.8em;
+	margin-top: 0.5em;
+}
+
+/* overrides the template's full-width uppercase button styling */
+.photo-carousel-btn {
+	background-color: rgba(0, 0, 0, 0.55);
+	border-radius: 50%;
+	box-shadow: none;
+	font-size: 1.6em;
+	height: 1.8em;
+	letter-spacing: 0;
+	line-height: 1.7em;
+	padding: 0;
+	position: absolute;
+	top: 45%; /* centres on the image rather than image + caption */
+	transform: translateY(-50%);
+	width: 1.8em;
+}
+
+.photo-carousel-btn:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.photo-carousel-btn.prev {
+	left: 0.4em;
+}
+
+.photo-carousel-btn.next {
+	right: 0.4em;
+}
+
+@media screen and (max-width: 736px) {
+	.photo-carousel figure {
+		flex-basis: 100%;
+	}
+}

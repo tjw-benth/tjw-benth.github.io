@@ -159,9 +159,27 @@
 						load-more="false">
 					</bsky-embed>
 					<h3 style="margin-top:2em;margin-bottom:0.75em;font-size:0.9em;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;">Conferences &amp; Presentations</h3>
-					<div style="display:flex;gap:1em;flex-wrap:wrap;">
-						<img loading="lazy" src="images/photo-03.jpg" alt="Tom Williams presenting research at a conference" style="flex:1;min-width:200px;max-width:48%;border-radius:4px;object-fit:cover;">
-						<img loading="lazy" src="images/photo-04.jpg" alt="Tom Williams presenting research at a conference" style="flex:1;min-width:200px;max-width:48%;border-radius:4px;object-fit:cover;">
+					<div class="photo-carousel" role="region" aria-roledescription="carousel" aria-label="Conference and presentation photos">
+						<div class="photo-carousel-track">
+							<figure>
+								<img loading="lazy" src="images/photo-14.jpg" alt="Tom Williams on stage presenting on intraspecific trait variation at Nordic Oikos–GfÖ 2026" width="1600" height="1200">
+								<figcaption>Nordic Oikos–GfÖ 2026 · Odense, Denmark</figcaption>
+							</figure>
+							<figure>
+								<img loading="lazy" src="images/photo-13.jpg" alt="Tom Williams presenting Kongsfjorden benthic community results to a seminar audience" width="1600" height="1200">
+								<figcaption>SEA-Quester General Assembly 2026 · Husö, Åland Islands</figcaption>
+							</figure>
+							<figure>
+								<img loading="lazy" src="images/photo-04.jpg" alt="Tom Williams presenting at the ECOWind Annual Impact Meeting 2024" width="2048" height="1536">
+								<figcaption>ECOWind Annual Impact Meeting 2024 · Southampton, UK</figcaption>
+							</figure>
+							<figure>
+								<img loading="lazy" src="images/photo-03.jpg" alt="Tom Williams presenting at the Aura Conference 2024" width="2048" height="1536">
+								<figcaption>Aura Conference 2024 · Hull, UK</figcaption>
+							</figure>
+						</div>
+						<button type="button" class="photo-carousel-btn prev" aria-label="Previous photos">&#8249;</button>
+						<button type="button" class="photo-carousel-btn next" aria-label="Next photos">&#8250;</button>
 					</div>
 				</div>
 			</section>
@@ -316,6 +334,21 @@
 			// the Canadian Arctic and Cambodia on load, and would have hidden Station Nord (81.6°N)
 			map.fitBounds(sites.map(function(s) { return [s.lat, s.lng]; }), { padding: [20, 20] });
 		})();
+	</script>
+	<script>
+		// Conference photo carousel: the buttons page through the scroll-snap track (swiping works natively), wrapping at either end
+		document.querySelectorAll('.photo-carousel').forEach(function (carousel) {
+			var track = carousel.querySelector('.photo-carousel-track');
+			function page(dir) {
+				var max = track.scrollWidth - track.clientWidth;
+				var target = track.scrollLeft + dir * track.clientWidth;
+				if (dir > 0 && track.scrollLeft >= max - 1) { target = 0; }
+				if (dir < 0 && track.scrollLeft <= 1) { target = max; }
+				track.scrollTo({ left: target });
+			}
+			carousel.querySelector('.prev').addEventListener('click', function () { page(-1); });
+			carousel.querySelector('.next').addEventListener('click', function () { page(1); });
+		});
 	</script>
 	<!-- Bluesky embed feed -->
 	<script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed@0.3.0/dist/bsky-embed.es.js"></script>
