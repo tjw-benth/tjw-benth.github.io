@@ -4315,8 +4315,9 @@ body:not([data-mode]) .general-only { display: none !important; }
 	display: none;
 }
 
+/* three per view on laptops and up: at two per view each photo was ~470 px wide and filled the screen */
 .photo-carousel figure {
-	flex: 0 0 calc(50% - 0.5em);
+	flex: 0 0 calc((100% - 2em) / 3);
 	margin: 0;
 	scroll-snap-align: start;
 }
@@ -4341,31 +4342,60 @@ body:not([data-mode]) .general-only { display: none !important; }
 	background-color: rgba(0, 0, 0, 0.55);
 	border-radius: 50%;
 	box-shadow: none;
-	font-size: 1.6em;
-	height: 1.8em;
+	font-size: 1.3em;
+	height: 1.6em;
 	letter-spacing: 0;
-	line-height: 1.7em;
+	line-height: 1.5em;
 	padding: 0;
 	position: absolute;
-	top: 45%; /* centres on the image rather than image + caption */
+	top: 44%; /* centres on the image rather than image + caption */
 	transform: translateY(-50%);
-	width: 1.8em;
+	width: 1.6em;
 }
 
 .photo-carousel-btn:hover {
 	background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* the arrows sit in the side margin (at least 3em above phone width) so they never cover a photo */
 .photo-carousel-btn.prev {
-	left: 0.4em;
+	left: -1.9em;
 }
 
 .photo-carousel-btn.next {
-	right: 0.4em;
+	right: -1.9em;
 }
 
+@media screen and (max-width: 980px) {
+	.photo-carousel figure {
+		flex-basis: calc(50% - 0.5em);
+	}
+}
+
+/* phones have no side margin to spare, so the arrows move back over the photo edges;
+   the next photo peeking in at the right shows the row can be swiped */
 @media screen and (max-width: 736px) {
 	.photo-carousel figure {
-		flex-basis: 100%;
+		flex-basis: 85%;
 	}
+
+	.photo-carousel-btn.prev {
+		left: 0.3em;
+	}
+
+	.photo-carousel-btn.next {
+		right: 0.3em;
+	}
+}
+
+/* Field map popups — the template colours every <strong> white, so the site names were invisible
+   on Leaflet's default white popup. #field-map outranks leaflet.css, which loads after this file. */
+#field-map .leaflet-popup-content-wrapper,
+#field-map .leaflet-popup-tip {
+	background: #2e3141;
+	color: #fff;
+}
+
+#field-map a.leaflet-popup-close-button {
+	color: #aaa;
 }

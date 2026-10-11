@@ -21,7 +21,8 @@
 	<meta property="og:image" content="https://tjw-benth.github.io/images/photo-01.jpg">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@tjw_97">
-	<link rel="stylesheet" href="assets/css/main.css">
+	<!-- bump ?v= whenever main.css changes: Pages caches for 10 min, and a browser holding the old stylesheet renders the new HTML unstyled -->
+	<link rel="stylesheet" href="assets/css/main.css?v=20261011">
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
 	<!-- Leaflet.js (field sites map — self-hosted) -->
 	<link rel="stylesheet" href="assets/css/leaflet.css">
@@ -283,7 +284,7 @@
 			if (!mapEl) return;
 			// CARTO basemaps require a key since Sept 2026 (free for non-commercial use, requested at carto.com/basemaps/apikey).
 			// The key is public by design — it travels in every tile request — so it is safe in HTML, like the Turnstile site key.
-			var CARTO_KEY = 'cb1_4h0q_1_55dbba17480a708278a79dd';
+			var CARTO_KEY = 'cb1_4h0q_1_55dbba17480a708278a79dd0';
 			// zoomSnap 0.25 lets fitBounds land between whole zoom levels, so all markers fit without zooming out a full step
 			var map = L.map('field-map', { scrollWheelZoom: false, zoomSnap: 0.25 });
 			L.tileLayer('https://basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png?key=' + CARTO_KEY, {
@@ -297,7 +298,7 @@
 				{ lat: 50.93,  lng: -1.40,  color: '#4fc3f7', name: 'University of Southampton, UK',                         note: 'PhD Marine Ecology (2019–2023) · PDRA: BOWIE — geospatial analysis &amp; experiments on offshore wind impacts on UK benthos (NE/X008991/1, 2024–2025) · ITV traits project (NE/T001577/1, 2024)' },
 
 				// Sea expeditions
-				{ lat: 81.60,  lng: -16.67, color: '#ff8a65', name: 'Station Nord, NE Greenland',                           note: 'SEA-Quester — macrobenthic sampling expedition (4–18 August 2026)' },
+				{ lat: 81.60,  lng: -16.67, color: '#ff8a65', name: 'Station Nord, NE Greenland (Villum Research Station)', note: 'SEA-Quester Expedition — soft-sediment macrobenthic sampling (2026)' },
 				{ lat: 64.18,  lng: -51.72, color: '#ff8a65', name: 'Nuuk, Greenland',                                      note: 'UK–Greenland Research Capacity — fjordic benthic contamination (2023)' },
 				{ lat: 70.0,   lng: -95.0,  color: '#ff8a65', name: 'Canadian Arctic (CCGS Amundsen)',                      note: 'ArcticNet Expedition — mesocosm incubations &amp; ROV deep-water coral dives (2021)' },
 				{ lat: 75.0,   lng: 18.0,   color: '#ff8a65', name: 'Barents Sea / ChAOS (RRS James Clark Ross, JR18006)',  note: 'Changing Arctic Ocean Seafloor expedition — sea-ice gradient sampling (2019)' },
