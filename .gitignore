@@ -10,3 +10,10 @@ scratch/
 *Overview.md
 *Review.md
 *Report.md
+
+# CV is served by the cv-download Worker from the private tjw-benth/cv-private repo, never from Pages.
+# The local copy stays so the localhost download bypass still works.
+williams_CV.pdf
+
+# Opts this repo out of the global Stop-hook auto-commit (~/.claude/hooks/on-stop-git.sh)
+.no-autocommit

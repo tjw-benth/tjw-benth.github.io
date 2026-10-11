@@ -337,6 +337,8 @@ if (!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
 	var errorEl  = document.getElementById('cv-form-error');
 	var submitBtn = document.getElementById('cv-submit-btn');
 	var isLocal   = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+	var FAILED    = 'Verification failed — please try again.';
+	var BROKEN    = 'Something went wrong — please try again.';
 
 	function openModal(e) {
 		e.preventDefault();
@@ -351,6 +353,18 @@ if (!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
 		form.reset();
 		submitBtn.disabled = false;
 		submitBtn.textContent = 'Download CV';
+	}
+
+	function savePdf(blob) {
+		var url = URL.createObjectURL(blob);
+		var a = document.createElement('a');
+		a.href = url;
+		a.download = 'Williams_CV.pdf';
+		document.body.appendChild(a);
+		a.click();
+		a.remove();
+		// revoking straight away can cancel the download in Safari
+		setTimeout(function () { URL.revokeObjectURL(url); }, 10000);
 	}
 
 	document.querySelectorAll('a[aria-label="Download CV"]').forEach(function (link) {
@@ -388,24 +402,20 @@ if (!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
 				token: tokenInput.value,
 			}),
 		})
-		.then(function (r) { return r.json(); })
-		.then(function (data) {
-			if (data.success) {
-				if (window.goatcounter && window.goatcounter.count) {
-					goatcounter.count({ path: '/cv-download', title: 'CV Download' });
-				}
-				closeModal();
-				window.location.href = 'williams_CV.pdf';
-			} else {
-				errorEl.textContent = 'Verification failed — please try again.';
-				errorEl.style.display = 'block';
-				if (window.turnstile) { turnstile.reset(); }
-				submitBtn.disabled = false;
-				submitBtn.textContent = 'Download CV';
-			}
+		.then(function (r) {
+			// a passed check returns the PDF itself, which is no longer served by GitHub Pages
+			if (!r.ok) { throw new Error(r.status === 400 ? FAILED : BROKEN); }
+			return r.blob();
 		})
-		.catch(function () {
-			errorEl.textContent = 'Something went wrong — please try again.';
+		.then(function (pdf) {
+			if (window.goatcounter && window.goatcounter.count) {
+				goatcounter.count({ path: '/cv-download', title: 'CV Download' });
+			}
+			closeModal();
+			savePdf(pdf);
+		})
+		.catch(function (err) {
+			errorEl.textContent = err.message === FAILED ? FAILED : BROKEN;
 			errorEl.style.display = 'block';
 			if (window.turnstile) { turnstile.reset(); }
 			submitBtn.disabled = false;
