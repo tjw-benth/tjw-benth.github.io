@@ -265,7 +265,7 @@
 			if (!mapEl) return;
 			// CARTO basemaps require a key since Sept 2026 (free for non-commercial use, requested at carto.com/basemaps/apikey).
 			// The key is public by design — it travels in every tile request — so it is safe in HTML, like the Turnstile site key.
-			var CARTO_KEY = '';
+			var CARTO_KEY = 'cb1_4h0q_1_55dbba17480a708278a79dd';
 			// zoomSnap 0.25 lets fitBounds land between whole zoom levels, so all markers fit without zooming out a full step
 			var map = L.map('field-map', { scrollWheelZoom: false, zoomSnap: 0.25 });
 			L.tileLayer('https://basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png?key=' + CARTO_KEY, {
