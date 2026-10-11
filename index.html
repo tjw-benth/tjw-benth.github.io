@@ -263,19 +263,23 @@
 		(function() {
 			var mapEl = document.getElementById('field-map');
 			if (!mapEl) return;
-			var map = L.map('field-map', { scrollWheelZoom: false }).setView([70, 5], 3);
-			L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+			// CARTO basemaps require a key since Sept 2026 (free for non-commercial use, requested at carto.com/basemaps/apikey).
+			// The key is public by design — it travels in every tile request — so it is safe in HTML, like the Turnstile site key.
+			var CARTO_KEY = '';
+			// zoomSnap 0.25 lets fitBounds land between whole zoom levels, so all markers fit without zooming out a full step
+			var map = L.map('field-map', { scrollWheelZoom: false, zoomSnap: 0.25 });
+			L.tileLayer('https://basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png?key=' + CARTO_KEY, {
 				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener noreferrer">CARTO</a>',
-				subdomains: 'abcd',
 				maxZoom: 19
 			}).addTo(map);
-			// colour key: blue = positions/institutions, orange = sea expeditions, green = workshops/collaborations/training
+			// colour key: blue = positions/institutions, orange = sea expeditions, purple = research training, green = workshops/collaborations
 			var sites = [
 				// Positions & institutions
 				{ lat: 60.45,  lng: 22.27,  color: '#4fc3f7', name: 'Åbo Akademi University, Turku, Finland',               note: 'Research Fellow — SEA-Quester (EU 101136480), 2025–present' },
 				{ lat: 50.93,  lng: -1.40,  color: '#4fc3f7', name: 'University of Southampton, UK',                         note: 'PhD Marine Ecology (2019–2023) · PDRA: BOWIE — geospatial analysis &amp; experiments on offshore wind impacts on UK benthos (NE/X008991/1, 2024–2025) · ITV traits project (NE/T001577/1, 2024)' },
 
 				// Sea expeditions
+				{ lat: 81.60,  lng: -16.67, color: '#ff8a65', name: 'Station Nord, NE Greenland',                           note: 'SEA-Quester — macrobenthic sampling expedition (4–18 August 2026)' },
 				{ lat: 64.18,  lng: -51.72, color: '#ff8a65', name: 'Nuuk, Greenland',                                      note: 'UK–Greenland Research Capacity — fjordic benthic contamination (2023)' },
 				{ lat: 70.0,   lng: -95.0,  color: '#ff8a65', name: 'Canadian Arctic (CCGS Amundsen)',                      note: 'ArcticNet Expedition — mesocosm incubations &amp; ROV deep-water coral dives (2021)' },
 				{ lat: 75.0,   lng: 18.0,   color: '#ff8a65', name: 'Barents Sea / ChAOS (RRS James Clark Ross, JR18006)',  note: 'Changing Arctic Ocean Seafloor expedition — sea-ice gradient sampling (2019)' },
@@ -308,10 +312,13 @@
 					fillOpacity: 0.85
 				}).addTo(map).bindPopup('<strong>' + s.name + '</strong><br><span style="color:#aaa;font-size:0.9em">' + s.note + '</span>');
 			});
+			// fit to the markers rather than a fixed centre — the old setView([70, 5], 3) hid Southampton,
+			// the Canadian Arctic and Cambodia on load, and would have hidden Station Nord (81.6°N)
+			map.fitBounds(sites.map(function(s) { return [s.lat, s.lng]; }), { padding: [20, 20] });
 		})();
 	</script>
 	<!-- Bluesky embed feed -->
-	<script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed@0.3.0/dist/bsky-embed.es.js"></script>
 	<!-- Analytics: GoatCounter (privacy-friendly, no cookies) -->
 	<script data-goatcounter="https://tjw-benth.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <!-- CV Download Modal -->
